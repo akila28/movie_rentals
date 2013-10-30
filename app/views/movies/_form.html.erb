@@ -1,0 +1,26 @@
+<%= form_for @movie do |f| %>
+<% if @movie.errors.any? %>
+<h4>THe movie Could not be saved due to:</h4>
+<ul>
+  <% @movie.errors.full_messages.each do |error|%>
+  <li><%= error%></li>
+  <% end%>
+</ul>
+<% end%>
+ <div class ="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+ </div>
+ <div class ="field">
+    <%= f.label :year %><br />
+    <%= f.text_field :year %>
+ </div>
+ <div class ="field">
+    <%= f.label :language %><br />
+    <%= f.text_field :language %>
+ </div>
+ <div class ="action">
+    <%= f.submit  %>
+   
+</div>
+<%end%>
